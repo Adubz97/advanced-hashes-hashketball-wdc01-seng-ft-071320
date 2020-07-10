@@ -163,14 +163,13 @@ def team_names()
 end
 
 def player_numbers(player_name)
-  game_hash.values.each do |team|
-    team[:players].each do |player|
-      if player.has_value? player_name
-        return player[:number]
+  game_hash.each do |team, numbers|
+    if numbers[:team_name] == team_name
+     return numbers[:players].collect do |player|
+       player[:number]
       end
       end
     end
-
 end
 
 def player_stats(player_name)
