@@ -165,7 +165,7 @@ end
 def player_numbers(team_name)
   game_hash.values.each do |team|
     team[:players].each do |player|
-      if player.has_value? player_name
+      if player.has_value? player_numbers
         return player[:number]
       end
     end
