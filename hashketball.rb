@@ -162,10 +162,12 @@ def team_names()
   end
 end
 
-def player_numbers(team)
+def player_numbers(player_name)
   game_hash.values.each do |team|
-    if team.has_value? team
-      
+    team[:players].each do |player|
+      if player.has_value? player_name
+        return player[:number]
+      end
       end
     end
 
